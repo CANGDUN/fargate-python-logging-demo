@@ -1,0 +1,13 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "ECR Registry for Python Logging Container"
+Parameters:
+  ECRRepositoryName:
+    Type: String
+    Default: "python-logging"
+    Description: Name of ECR Repository
+
+Resources:
+  ECRRepository:
+    Type: "AWS::ECR::Repository"
+    Properties:
+      RepositoryName: !Ref ECRRepositoryName
